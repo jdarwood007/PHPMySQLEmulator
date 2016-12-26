@@ -4,7 +4,7 @@
 if (!function_exists('mysql_connect'))
 {
 	function mysql_connect($host, $username, $password){global $db_connection; $db_connection = mysqli_connect($host, $username, $password); return $db_connection;}
-	function mysql_pconnect($host, $username, $password){global $db_connection; $db_connection = mysqli_connect('p:' . $host, $username, $password); return $db_connection}
+	function mysql_pconnect($host, $username, $password){global $db_connection; $db_connection = mysqli_connect('p:' . $host, $username, $password); return $db_connection;}
 	function mysql_real_escape_string($string, $resource = null){if(is_null($resource))$resource = $GLOBALS['db_connection']; return mysqli_real_escape_string($resource, $string);}
 	function mysql_select_db($database, $resource = null){if(is_null($resource))$resource = $GLOBALS['db_connection']; return mysqli_select_db($resource, $database);}
 	function mysql_fetch_row($resource = null){if(is_null($resource))$resource = $GLOBALS['db_connection']; return mysqli_fetch_row($resource);}
